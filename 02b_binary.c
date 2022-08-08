@@ -25,7 +25,7 @@ void bs(int arr[], int n, int key, char filename[])
     FILE *fp = fopen(filename, "a");
     binarysearch(arr, key, 0, n - 1);
     fprintf(fp, "%d\t", n);
-    fprintf(fp, " %d %d\n", count, key);
+    fprintf(fp, " %d\n", count);
 }
 
 void main()
