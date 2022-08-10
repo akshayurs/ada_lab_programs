@@ -1,5 +1,8 @@
 #include <stdio.h>
-int min(int, int);
+int min(int a, int b)
+{
+    return a < b ? a : b;
+}
 void floyds(int p[10][10], int n)
 {
     int i, j, k;
@@ -11,13 +14,6 @@ void floyds(int p[10][10], int n)
                 else
                     p[i][j] = min(p[i][j], p[i][k] + p[k][j]);
 }
-int min(int a, int b)
-{
-    if (a < b)
-        return (a);
-    else
-        return (b);
-}
 void main()
 {
     int p[10][10], w, n, e, u, v, i, j;
@@ -27,10 +23,8 @@ void main()
     printf("\n Enter the number of edges:\n");
     scanf("%d", &e);
     for (i = 1; i <= n; i++)
-    {
         for (j = 1; j <= n; j++)
             p[i][j] = 999;
-    }
     for (i = 1; i <= e; i++)
     {
         printf("\n Enter the end vertices of edge%d with its weight \n", i);
@@ -52,11 +46,4 @@ void main()
             printf("%d \t", p[i][j]);
         printf("\n");
     }
-    printf("\n The shortest paths are:\n");
-    for (i = 1; i <= n; i++)
-        for (j = 1; j <= n; j++)
-        {
-            if (i != j)
-                printf("\n <%d,%d>=%d", i, j, p[i][j]);
-        }
 }
