@@ -20,14 +20,13 @@ void heapify(int arr[], int n, int i)
         int temp = arr[i];
         arr[i] = arr[largest];
         arr[largest] = temp;
-
         heapify(arr, n, largest);
     }
 }
 void heapsort(int arr[], int n, char filename[])
 {
     count = 0;
-    int i, j, temp, flag;
+    int i, j, temp;
     for (i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
     for (i = n - 1; i >= 0; i--)
@@ -51,13 +50,13 @@ void main()
     {
         int arr[n];
         for (i = 0; i < n; i++)
-            arr[i] = i;
+            arr[i] = n - i;
         heapsort(arr, n, "count_best.txt");
         for (i = 0; i < n; i++)
-            arr[i] = n - i;
+            arr[i] = i;
         heapsort(arr, n, "count_worst.txt");
         for (i = 0; i < n; i++)
-            arr[i] = rand() % 5;
+            arr[i] = rand() % n;
         heapsort(arr, n, "count_average.txt");
     }
 }
