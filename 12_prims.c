@@ -6,33 +6,25 @@ int main()
     scanf("%d", &n);
     printf("Enter cost in form of adjacency matrix\n");
     for (i = 1; i <= n; i++)
-    {
         for (j = 1; j <= n; j++)
         {
             scanf("%d", &cost[i][j]);
             if (cost[i][j] == 0)
                 cost[i][j] = 1000;
         }
-    }
     visited[1] = 1;
     while (no_e < n)
     {
         min = 1000;
         for (i = 1; i <= n; i++)
-        {
             for (j = 1; j <= n; j++)
-            {
-                if (cost[i][j] < min)
+                if (cost[i][j] < min && visited[i] != 0)
                 {
-                    if (visited[i] != 0)
-                    {
-                        min = cost[i][j];
-                        a = i;
-                        b = j;
-                    }
+                    min = cost[i][j];
+                    a = i;
+                    b = j;
                 }
-            }
-        }
+
         if (visited[b] == 0)
         {
             printf("\n%d to %d  cost=%d", a, b, min);
@@ -43,5 +35,4 @@ int main()
         cost[a][b] = cost[b][a] = 1000;
     }
     printf("\nminimum weight is %d", min_cost);
-    return 0;
 }
