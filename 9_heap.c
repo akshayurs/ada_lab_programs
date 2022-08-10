@@ -24,14 +24,15 @@ void heapify(int arr[], int n, int i)
         heapify(arr, n, largest);
     }
 }
-void heapSort(int arr[], int n, char filename[])
+void heapsort(int arr[], int n, char filename[])
 {
-    int count = 0;
+    count = 0;
     int i, j, temp, flag;
     for (i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
     for (i = n - 1; i >= 0; i--)
     {
+        count++;
         temp = arr[0];
         arr[0] = arr[i];
         arr[i] = temp;
@@ -40,10 +41,6 @@ void heapSort(int arr[], int n, char filename[])
     FILE *fp = fopen(filename, "a");
     fprintf(fp, "%d\t", n);
     fprintf(fp, " %d\n", count);
-}
-
-void bubblesort(int arr[], int n, char filename[])
-{
 }
 void main()
 {

@@ -1,0 +1,2 @@
+set style data line
+plot "count_average.txt","count_best.txt","count_worst.txt"
