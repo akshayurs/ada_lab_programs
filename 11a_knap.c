@@ -21,12 +21,6 @@ int knapSack(int cap, int wt[], int val[], int n)
                 K[i][j] = K[i - 1][j];
         }
     }
-    for (int i = 0; i <= n; i++)
-    {
-        for (int j = 0; j <= cap; j++)
-            printf("%d  ", K[i][j]);
-        printf("\n");
-    }
     return K[n][cap];
 }
 
