@@ -5,6 +5,12 @@
 #define END 100
 #define INCR 10
 int count;
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 void heapify(int arr[], int n, int i)
 {
     count++;
@@ -17,24 +23,20 @@ void heapify(int arr[], int n, int i)
         largest = right;
     if (largest != i)
     {
-        int temp = arr[i];
-        arr[i] = arr[largest];
-        arr[largest] = temp;
+        swap(&arr[i], &arr[largest]);
         heapify(arr, n, largest);
     }
 }
 void heapsort(int arr[], int n, char filename[])
 {
     count = 0;
-    int i, j, temp;
+    int i, j;
     for (i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
     for (i = n - 1; i >= 0; i--)
     {
         count++;
-        temp = arr[0];
-        arr[0] = arr[i];
-        arr[i] = temp;
+        swap(&arr[0], &arr[i]);
         heapify(arr, i, 0);
     }
     FILE *fp = fopen(filename, "a");
