@@ -34,12 +34,6 @@ void main()
     {
         int arr[n];
         for (i = 0; i < n; i++)
-            arr[i] = i;
-        selectionsort(arr, n, "count_best.txt");
-        for (i = 0; i < n; i++)
-            arr[i] = n - i;
-        selectionsort(arr, n, "count_worst.txt");
-        for (i = 0; i < n; i++)
             arr[i] = rand() % n;
         selectionsort(arr, n, "count_average.txt");
     }
