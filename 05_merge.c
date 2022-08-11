@@ -22,30 +22,19 @@ void merge(int arr[], int l, int m, int r)
     {
         count++;
         if (L[i] <= R[j])
-        {
-            arr[k] = L[i];
-            i++;
-        }
+            arr[k++] = L[i++];
         else
-        {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
+            arr[k++] = R[j++];
     }
     while (i < n1)
     {
         count++;
-        arr[k] = L[i];
-        i++;
-        k++;
+        arr[k++] = L[i++];
     }
     while (j < n2)
     {
         count++;
-        arr[k] = R[j];
-        j++;
-        k++;
+        arr[k++] = R[j++];
     }
 }
 void mergesort(int a[], int l, int r)
@@ -71,5 +60,5 @@ void main()
             arr[i] = rand() % 5;
         mergesort(arr, 0, n - 1);
         fprintf(fp, "%d\t%d\n", n, count);
-        }
+    }
 }
