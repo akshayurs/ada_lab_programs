@@ -16,7 +16,7 @@ void patternmatch(int text[], int pattern[], int n, int m, char filename[])
             if (pattern[j] != text[i + j])
                 break;
         }
-        if (j == n)
+        if (j == m)
             break;
     }
     FILE *fp = fopen(filename, "a");
