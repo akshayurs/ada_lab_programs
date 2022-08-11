@@ -15,8 +15,7 @@ void linearsearch(int arr[], int n, int key, char filename[])
             break;
     }
     FILE *fp = fopen(filename, "a");
-    fprintf(fp, "%d\t", n);
-    fprintf(fp, " %d\n", count);
+    fprintf(fp, "%d\t%d\n", n, count);
 }
 
 void main()

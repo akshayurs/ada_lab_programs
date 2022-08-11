@@ -20,8 +20,7 @@ void patternmatch(int text[], int pattern[], int n, int m, char filename[])
             break;
     }
     FILE *fp = fopen(filename, "a");
-    fprintf(fp, "%d\t", n);
-    fprintf(fp, " %d\n", count);
+    fprintf(fp, "%d\t%d\n", n, count);
 }
 void main()
 {

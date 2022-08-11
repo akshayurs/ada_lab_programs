@@ -58,8 +58,7 @@ void sort(int arr[], int n, char filename[])
     count = 0;
     quicksort(arr, 0, n - 1);
     FILE *fp = fopen(filename, "a");
-    fprintf(fp, "%d\t", n);
-    fprintf(fp, " %d\n", count);
+    fprintf(fp, "%d\t%d\n", n, count);
 }
 void main()
 {

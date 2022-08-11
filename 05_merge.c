@@ -70,7 +70,6 @@ void main()
         for (i = 0; i < n; i++)
             arr[i] = rand() % 5;
         mergesort(arr, 0, n - 1);
-        fprintf(fp, "%d\t", n);
-        fprintf(fp, " %d\n", count);
-    }
+        fprintf(fp, "%d\t%d\n", n, count);
+        }
 }
