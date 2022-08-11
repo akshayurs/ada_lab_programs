@@ -31,9 +31,7 @@ void main()
     {
         for (i = 0; i < m; i++)
             pattern[i] = 0;
-        pattern[0] = 1;
         patternmatch(text, pattern, n, m, "count_best.txt");
-        pattern[0] = 0;
         pattern[m - 1] = 1;
         patternmatch(text, pattern, n, m, "count_worst.txt");
         for (i = 0; i < m; i++)
