@@ -6,14 +6,11 @@ int visited[MAX] = {0}, graph[MAX][MAX];
 
 void bfs(int start)
 {
-    int queue[MAX];
-    int parent[MAX];
-    int parentnode;
-    int rear = 0, front = -1;
+    int queue[MAX], parent[MAX], parentnode, rear = 0, front = -1;
     count++;
     visited[start] = 1;
     queue[rear] = start;
-    parent[rear] = start;
+    parent[rear] = -1;
     while (rear != front)
     {
         front++;
