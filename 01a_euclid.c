@@ -14,3 +14,5 @@ void main()
     printf("GCD : %d\n", m);
     printf("count : %d\n", count);
 }
+
+ganesh
